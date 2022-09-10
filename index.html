@@ -4,46 +4,10 @@
 <head>
     <meta charset = "utf-8">
     <title>Etch-A-Sketch</title>
-    <link hrel="stylesheet" src="./styles.css">
-    <!-- <scipt src =./script.js defer></script> -->
+    <script src =./script.js defer></script>
+    <link rel="stylesheet" href="./styles.css">
+    
 
-    <style>
-
-        #bigContainer {
-            display: flex;
-        
-        }
-
-        #setting {
-            flex: 1;
-            max-width: 100px;
-        }
-
-        #sketchpad {
-            display: flex;
-            flex: 1;
-            max-width: 1000px;
-            max-height: 1000px;
-            
-        }   
-
-        .rows {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            height: 850px;
-        }
-        
-        .grids{
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 50px;
-            background-color: grey; 
-        
-        }
-    </style>
 </head>
 
 <body>
@@ -52,85 +16,6 @@
 
 
     </div>
-
-    <script>
-        
-        // Create a container on the left for setting
-        const pointer = document.querySelector("#bigContainer");
-        const settingContainer = document.createElement("div");
-        settingContainer.setAttribute("id", "setting");
-        pointer.appendChild(settingContainer);
-        
-        // Create a container on the right for the sketchpad
-        const container = document.createElement("div");
-        container.setAttribute("id", "sketchpad");
-        pointer.appendChild(container);
-
-        // SETTINGS
-        // Create prompt to change the number of grids
-        let n;
-
-        do {
-            n = parseInt(prompt("How many grids per row do you want?"));
-        } while (isNaN(n) || n < 1 || n >100);
-        
-
-
-        // Create rows 
-        for (let i=0; i<n; i++)
-        {
-            const container = document.querySelector("#sketchpad");
-            const rows = document.createElement("div");
-            rows.setAttribute("id", "row"+(i+1));
-            rows.setAttribute("class", "rows");
-            container.appendChild(rows);
-
-            // Create columns per row
-            for (let j=n*i; j<n*(i+1); j++)
-            {
-                let id = "#row" + (i+1); 
-                const row = document.querySelector(`${id}`);
-                const grid = document.createElement("div");
-                grid.setAttribute("id", "grid"+(j+1));
-                grid.setAttribute("class", "grids");
-                row.appendChild(grid);
-            }; 
-
-        };
-
-        // Create click effect
-        
-        const hover = document.querySelectorAll(".grids");
-        hover.forEach((div) => {
-            div.addEventListener("mousedown", () => {
-                div.setAttribute("style", "background-color:yellow");
-            });
-        });
-
-        
-
-
-
-           
-
-
-            
-            
-            
-          
-        
-       
-
-        
-        
-        
-
-        
-
-
-    </script>
-
-
 
 </body>
 
