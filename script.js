@@ -9,8 +9,7 @@
     container.setAttribute("id", "sketchpad");
     pointer.appendChild(container);
 
-    // Create setting
-
+    // Create buttons
     let x= 4;
     for (i=0; i<x; i++) {
         const setting = document.getElementById("setting");
