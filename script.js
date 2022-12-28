@@ -30,7 +30,7 @@
     let n;
 
     do {
-        n = parseInt(prompt("How many grids per row do you want?"));
+        n = parseInt(prompt("How many grids per row that you want?"));
     } while (isNaN(n) || n < 1 || n >100);
     
 
